@@ -27,7 +27,7 @@ const Categories = () => {
                     <p className='text-[0.75rem] text-gray-600 font-semibold'>MEN</p>
 
                 </div>
-                <div className='flex flex-col justify-center items-center'>
+                <div className='flex flex-col justify-center items-center 'onClick={HandleNavigate}>
                     <div><img className='h-12 w-10 border-b-[3.5px] border-b-blue-800  bg-gray-300' src={women} /> </div>
                     <p className='text-[0.75rem] text-gray-600 font-semibold'>WOMEN</p>
 

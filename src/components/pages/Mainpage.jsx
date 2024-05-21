@@ -4,9 +4,12 @@ import BigCard from '../cards/BigCard'
 import Brands from '../cards/Brands'
 import Morecards from '../cards/Morecards'
 import BNavbar from '../bottom/BNavbar'
+import Navbar from '../header/Navbar'
+
 const Mainpage = () => {
   return (
     <>
+      <Navbar />
       <Categories/>
       <BigCard/>
       <Brands/>
@@ -14,7 +17,6 @@ const Mainpage = () => {
       <Morecards />
       <Morecards />
       <BNavbar />
-
     </>
   )
 }
