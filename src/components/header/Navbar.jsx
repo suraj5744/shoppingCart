@@ -24,6 +24,10 @@ const Navbar = () => {
   const HandleCart=()=>{
     Navigate('/Cart')
   }
+
+  const Handlewish=()=>{
+    Navigate('/Wishlist')
+  }
   return (
     <div className='w-full flex flex-col gap-3 sticky top-0 left-0 z-10 bg-white'>
       <div className='navbar flex justify-between items-center w-full h-10 px-4 '>
@@ -39,7 +43,7 @@ const Navbar = () => {
 
         <div className='right-div flex justify-end gap-2 items-center '>
           <div > <img className='h-6 w-6' src={notify} /> </div>
-          <div > <img className='h-8 w-7' src={heart} /> </div>
+          <div onClick={Handlewish}> <img className='h-8 w-7' src={heart} /> </div>
           <div className='' onClick={HandleCart} > <img className='h-6 w-6' src={bag} /> </div>
 
         </div>

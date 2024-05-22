@@ -21,8 +21,12 @@ const ecommerceSlice = createSlice({
             state.cart.push(action.payload);
             state.totalPrice+=state.product[action.payload-1].price;
         },
+        addToWishlist(state, action){
+            state.wishlist.push(action.payload);
+            
+        }
     }
 })
 
-export const {addToCart, addToProduct, BuyPage} = ecommerceSlice.actions;
+export const {addToCart, addToProduct, BuyPage, addToWishlist} = ecommerceSlice.actions;
 export default ecommerceSlice.reducer;

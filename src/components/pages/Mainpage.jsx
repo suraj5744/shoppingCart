@@ -9,7 +9,7 @@ import Navbar from '../header/Navbar'
 const Mainpage = () => {
   return (
     <>
-      <Navbar />
+      
       <Categories/>
       <BigCard/>
       <Brands/>
