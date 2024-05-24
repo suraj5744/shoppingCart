@@ -11,7 +11,7 @@ const BuyNow = () => {
         return false;
     };
     return (
-        <div className="w-full flex flex-col gap-2 justify-between  ">
+        <div className="w-full flex flex-col gap-2 justify-between  px-4">
             <p className="box bg-slate-300 h-14 w-full flex items-center mt-4">ONLINE PAYMENT OPTIONS</p>
             <div className="mt-2 flex flex-col justify-center" >
 

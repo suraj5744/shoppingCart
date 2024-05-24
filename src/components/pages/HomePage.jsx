@@ -20,7 +20,7 @@ const HomePage = () => {
   }
 
   const HandleAddToCart = (id) => {
-    dispatch(addToCart(id))
+    dispatch(addToCart(id));
   }
   const Navigate = useNavigate();
   const Handlebuy = () => {
