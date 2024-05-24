@@ -30,6 +30,7 @@ const ecommerceSlice = createSlice({
         },
         removeFromCart(state, action){
             state.cart = state.cart.filter((item)=>item!==action.payload);
+            state.totalPrice+=state.product[action.payload-1].price;
         }
     }
 })
