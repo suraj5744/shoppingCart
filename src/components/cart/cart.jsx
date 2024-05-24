@@ -19,73 +19,98 @@ const cart = () => {
 
 
   return (
-    <div className='flex justify-between'>
+    <div className='w-full flex h-screen justify-between flex-col'>
+      <div className='flex flex-col justify-between '>
+        <div className=' flex flex-col  '>
+          {
 
-      <div className=' grid grid-cols-1'>
+            ecommerce.product
 
+              ? ecommerce.product.map((item) => {
+                for (let i = 0; i < item.length; i++) {
 
-        {
+                }
 
-          ecommerce.product
-
-            ? ecommerce.product.map((item) => {
-              for (let i = 0; i < item.length; i++) {
-
-              }
-
-              return <>
-                {
-                  isPresentInCart(item.id)
-                    ? <div className="product-box px-4 py-2 w-56" key={item.id}>
-                      <div className="img-box h-52 w-52">
-                        <img src={item.thumbnail} alt="" className='h-full w-full object-cover' />
+                return <>
+                  {
+                    isPresentInCart(item.id)
+                      ? <div className=" flex  items-center product-box w-auto h-32 gap-5" key={item.id}>
+                        <div className="img-box h-16 w-20 flex justify-center items-item">
+                          <img src={item.thumbnail} alt="" className='h-16 w-20  object-cover' />
+                        </div>
+                        <div className='flex flex-col justify-center '> 
+                        <p className="title">{item.title}</p>
+                        <p className="price">${item.price}</p>
+                        <p className="rating">Rating{item.rating}</p>
                       </div>
-                      <p className="title">{item.title}</p>
-                      <p className="price">${item.price}</p>
-                      <p className="rating">Rating{item.rating}</p>
+                        </div>
                       
-                      {/* <div><button className='bg-orange-500 text-black cursor-pointer rounded-md mt-1' onClick={() => HandleAddToCart(item.id)}>Add to Cart</button> </div> */}
-                    </div>
-                    : null
-                }
-              </>
-            })
-            : <div>No product</div>
-        }
-      </div>
-      <div className='flex flex-col  w-1/2.5'>
-
-        {
-          ecommerce.product
-            ? ecommerce.product.map((item) => {
-
-              return <>
-                {
-                  isPresentInCart(item.id)
-                    ? <div className="" key={item.id}>
-
-                      <p className="title">{item.title}</p>
-                      <p className="price">${item.price}</p>
-
-
-
-                    </div>
-
-
-                    : null
-
-
-                }
-
-              </>
-
-            })
-            : <div>No product </div>
-
-        }
-        <p className="totalPrice">Total Price= ${ecommerce.totalPrice}</p>
-        <div className='h-14 w-20'><button className='bg-red-600 text-white cursor-pointer  rounded-md mt-1' onClick={HandlePurchase} >PLACE ORDER</button> </div>
+                      : null
+                  }
+                </>
+              })
+              : <div>No product</div>
+          }
         </div>
+        <div className='flex flex-col border-y-[1.5px] border-neutral-950  w-1/2.5'>
+          <div className='px-4 flex items-center text-base font-semibold h-8'><p>PRICE DETAILS</p></div>
+
+          {
+            ecommerce.product
+              ? ecommerce.product.map((item) => {
+
+                return <>
+                  {
+                    isPresentInCart(item.id)
+                      ? <div className="flex justify-between mt-2 px-4 " key={item.id}>
+
+                        <div>
+                        <p className="title">{item.title}</p>
+                        
+                        </div>
+                        
+                        
+                        
+                        
+                        <div className='flex flex-col justify-center items-center'>
+                        <p className="price">${item.price}</p>
+                        
+                        </div>
+                        
+
+
+
+                      </div>
+                      
+
+
+                      : null
+
+
+                  }
+
+                </>
+
+              })
+              : <div>No product </div>
+              
+
+          }
+          {/* <p className="totalPrice">Total Price= ${ecommerce.totalPrice}</p> */}
+          <div></div>
+          
+          <div className='flex justify-between px-4 text-lg font-bold border-y-[1.5px] border-neutral-950'> <div>Total Amount</div>
+          <p>${ecommerce.totalPrice}</p></div>
+         
+        
+        
+        
+        
+        </div>
+      </div>
+      <div className='sticky bottom-0 left-0 z-20'>
+        <button className='bg-red-600 w-full py-4 px-4 text-lg text-white cursor-pointer  rounded-md mt-1' onClick={HandlePurchase} >PLACE ORDER</button>
+      </div>
     </div>
 
   )

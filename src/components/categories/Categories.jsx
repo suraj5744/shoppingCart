@@ -13,7 +13,7 @@ const Categories = () => {
     }
     return (
         <div>
-            <div className='flex justify-around items-center'>
+            <div className='flex justify-around items-center mt-2'>
 
                 <div className='flex flex-col justify-center items-center'>
                     <div><img className='h-12 w-10 border-b-[3.5px] border-b-blue-800 bg-gray-300' src={deals} /></div>

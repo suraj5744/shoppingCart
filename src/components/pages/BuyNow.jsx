@@ -11,7 +11,7 @@ const BuyNow = () => {
         return false;
     };
     return (
-        <div className="w-full flex flex-col gap-2  ">
+        <div className="w-full flex flex-col gap-2 justify-between  ">
             <p className="box bg-slate-300 h-14 w-full flex items-center mt-4">ONLINE PAYMENT OPTIONS</p>
             <div className="mt-2 flex flex-col justify-center" >
 
@@ -32,13 +32,15 @@ const BuyNow = () => {
                 <div className="text-red-600">APPLY</div>
             </div>
             
-            <div><div>PRICE DETAILS</div></div>
+            <div><div className="text-emerald-600 font-semibold">PRICE DETAILS</div></div>
             <div className="flex justify-between items-center">
                 
                 <div>
                     <div>Total MRP</div>
                     <div>Platform Fee</div>
                     <div>Shipping Fee</div>
+
+            
                 </div>
                 <div>
                     <div>${ecommerce.totalPrice}
@@ -50,7 +52,7 @@ const BuyNow = () => {
             </div>
 
 
-            <div className="flex justify-around">
+            <div className="flex justify-around sticky bottom-0 left-0 z-20 bg-white shadow-lg">
                 <div><div className="flex justify-center items-center text-2xl font-semibold">
                     ${ecommerce.totalPrice}
                 </div>

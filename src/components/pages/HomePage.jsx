@@ -27,15 +27,15 @@ const HomePage = () => {
     Navigate('/cart')
   }
 
-  const isPresentInWishList = (id)=>{
-    for(let i = 0; i<ecommerce.wishlist.length; i++){
-      if(ecommerce.wishlist[i] === id)
-          return true;
+  const isPresentInWishList = (id) => {
+    for (let i = 0; i < ecommerce.wishlist.length; i++) {
+      if (ecommerce.wishlist[i] === id)
+        return true;
     }
     return false;
   }
 
-  const HandleAddToWishlist = (id)=>{
+  const HandleAddToWishlist = (id) => {
     dispatch(addToWishlist(id));
   }
 
@@ -44,7 +44,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className='w-full grid grid-cols-1 place-items-center gap-2'>
+    <div className='flex flex-col justify-center items-center'>
+    <div className='w-full grid grid-cols-2 place-items-center place-content-center gap-2'>
       {
         ecommerce.product
           ? ecommerce.product.map((item) => {
@@ -56,14 +57,15 @@ const HomePage = () => {
               <p className="price">${item.price}</p>
               <p className="rating">Rating{item.rating}</p>
               <div className=' h-10 w-32 bg-black flex justify-center items-center'><button className=' text-white cursor-pointer rounded-md mt-1' onClick={Handlebuy} >Buy Now</button> </div>
-              <div className=' h-10 w-32 bg-orange-600 flex justify-center items-center'><button className=' text-black cursor-pointer rounded-md mt-1' onClick={() => HandleAddToCart(item.id)}>Add to Cart</button> 
+              <div className=' h-10 w-32 bg-orange-600 flex justify-center items-center'><button className=' text-black cursor-pointer rounded-md mt-1' onClick={() => HandleAddToCart(item.id)}>Add to Cart</button>
               </div>
               {
-                  !isPresentInWishList(item.id)
-                  ?<FaRegHeart size={40} className='' 
-                  onClick={()=>HandleAddToWishlist(item.id)}
+                !isPresentInWishList(item.id)
+                  ? <FaRegHeart size={40} className=''
+                    onClick={() => HandleAddToWishlist(item.id)}
                   />
-                  :<FaHeart size={40} color='red'/>
+                  : <FaHeart size={40} color='red' />
+
               }
             </div>
 
@@ -72,8 +74,10 @@ const HomePage = () => {
 
       }
 
+      
 
-
+    </div>
+    <div className='mt-1'>Developed by- Suraj Kumar Srivastav </div>
     </div>
   )
 }

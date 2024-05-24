@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="img-box rounded-md">
               <img src={fashionlogo} className='w-full h-full object-cover' />
             </div>
-            <p className="text font-bold">
+            <p className="text font-bold" onClick={HandleMain}>
               Fashion
             </p>
           </div>
